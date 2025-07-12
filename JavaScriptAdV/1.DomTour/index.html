@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of Dom</title>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        h1{
+            color: rgb(60, 14, 226);
+        }
+        #food-title{
+            color: green;
+        }
+        .bg-red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>This is my header no banner</h1>
+    </header>
+    <main id="main-container">
+        <section id="old-dhaka" class="songs">
+            <h1>Welcome to my DOM</h1>
+            <p>
+                Lorem ipsum dolor <span>oli goli</span> amet consectetur adipisicing elit. <span>Alias</span>, temporibus!
+            </p>
+            <h1>asdf asdf <span>Some text</span> </h1>
+            <ul>
+                <li>Shafayet</li>
+                <li class="foreign">Bonobash</li>
+                <li id="band" class="">Jalali Set</li>
+                <li class="international">Dubai</li>
+                <li>Dom De re baba</li>
+            </ul>
+        </section>
+        <section class="food">
+            <h1 id="food-title">Foods I love</h1>
+            <ul>
+                <li>Rice</li>
+                <li>Potato</li>
+                <li>Fish</li>
+                <li>Lentils</li>
+                <li class="foreign">Burger</li>
+                <li class="foreign">Pizza</li>
+                <li class="foreign">Pasta</li>
+            </ul>
+        </section>
+        <section id="players-container">
+            <h1>Players</h1>
+            <ul id="player-list">
+                <li>Messi</li>
+                <li>Pele</li>
+                <li>Ronaldo</li>
+                <li>Embape</li>
+                <li>Chele</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        const allHeading = document.getElementsByTagName('h1');
+        for (const h1 of allHeading) {
+            console.log(h1.innerText);
+            
+        }
+        const foodTitle = document.getElementById('food-title');
+        foodTitle.innerText = "Soumen's Favorite Food"
+
+        const BandElement = document.getElementById('band');
+        BandElement.innerText = 'jalali sleeping Band'
+
+        const foreignElements = document.getElementsByClassName('foreign')
+        console.log(foreignElements);
+        for (const item of foreignElements) {
+            console.log(item.innerText);
+        }
+        //query Selector all ;
+        const spanElements = document.querySelectorAll('#old-dhaka p span');
+        console.log(spanElements);
+        
+        for(const span of spanElements){
+            console.log(span.innerText);
+            
+        }
+        
+        
+    </script>
+    <script src="js/dom.js"></script>
+    <script src="js/append.js"></script>
+    <script src="js/style.js"></script>
+</body>
+</html>
